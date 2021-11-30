@@ -15,8 +15,62 @@
 </head>
 
 <body>
-    <div id="root">
+    <div id="root" class="app-container">
+        <!-- COLONNA DI DESTRA -->
+        <div class="col-left">
+            <!-- USER -->
+            <section class="header-utente">
+                <div class="utente">
+                    <img class="omini" src="./img/avatar_1.jpg" alt="user">
+                    <h3>Alessandro Mandaglio</h3>
+                </div>
+                <div class="icone">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </section>
+            <!-- /USER -->
 
+            <!-- NOTIFICHE -->
+            <section class="notifiche">
+                <div class="sfondo-campana">
+                    <i class="fas fa-bell-slash"></i>
+                </div>
+                <div class="mess">
+                    <p>Ricevi notifiche dei nuovi messaggi</p>
+                    <a href="#">Attive notifiche desktop </a>
+                </div>
+            </section>
+            <!-- /NOTIFICHE -->
+
+            <!-- BARRA CERCA -->
+            <section class="cerca">
+                <div class="dentro-input">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <input class="cerca-chat" type="text" name="contact-name" value=""
+                        placeholder="Cerca o inizia una nuova chat">
+                </div>
+            </section>
+            <!-- /BARRA CERCA -->
+
+            <!-- /CONTATTI -->
+            <ul class="contatti">
+                <li v-for="(contact,index) in contacts" :key="index" :class="index == 0 ? 'active' : null">
+                    <div class="contatti-avatar">
+                        <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                    </div>
+                    <div class="contatti-nome">
+                        {{contact.name}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-right">
+
+        </div>
     </div>
 
 

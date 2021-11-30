@@ -3,3 +3,178 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* COMMON */
+
+body{
+    font-family: 'Lato', sans-serif;
+	height: 100vh;
+	background: linear-gradient(to bottom, #009688 0% 15%, #D8DBD5 15% 100%);
+    padding: 30px;
+}
+
+/* CONTENITORE DI TUTTA APP */
+
+.app-container {
+	width: 80%;
+	height: 100%;
+	margin: 15px auto;
+	display: flex;
+}
+
+/* COLONNA SINISTRA */
+
+.col-left{
+    height: 100%;
+    width: 30%;   
+	background-color: white;
+}
+
+/* USER */
+
+.header-utente{
+    height: 70px;
+    background-color: #EAEAEA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.utente{
+    display: flex;
+    align-items: center;
+
+}
+
+.utente h3{
+    margin-left: 15px;
+    margin-top: 5px;
+    color: black;
+}
+
+.omini{
+    height: 50px;
+    width: 50px;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.icone{
+    color: gray;    
+    font-size: 20px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    cursor: pointer;
+}
+
+/* NOTIFICHE */
+
+.notifiche {
+  width: 100%;
+  height: 86px;
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+}
+
+.mess {
+  display: flex;
+  flex-direction: column;
+}
+
+.mess p {
+  color: black;
+  font-size: 14px;
+}
+
+.sfondo-campana {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: white;
+  margin: 13px;
+  display: flex;
+  align-items: center;
+}
+
+.sfondo-campana i{
+   color: lightskyblue;
+   font-size: 20px;
+   margin-left: 12px;
+}
+
+/* BARRA CERCA */
+
+.cerca {
+  width: 100%;
+  height: 50px;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dentro-input {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 95%;
+  height: 80%;
+  margin: auto;
+  background: #f1efef;
+  color: lightgray;
+}
+
+.cerca input {
+  border: 0;
+  width: 80%;
+  height: 100%;
+}
+
+.cerca-chat {
+  background:  #f1efef;
+}
+
+/* CONTATTI */
+.contatti {
+	height: calc(100% - 206px);
+	overflow-y: scroll;
+}
+
+.contatti li {
+	padding: 10px 20px;
+	display: flex;
+}
+
+.contatti li.active{
+	background-color: #E9EBEB;
+}
+
+.contatti-avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.contatti-avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.contatti-nome {
+	margin-left: 20px;
+    font-weight: bold;
+}
+
+/* COLONNA DI DESTRA */
+
+.col-right{
+    height: 100%;
+    width: 70%;
+    background-color: red;
+}
