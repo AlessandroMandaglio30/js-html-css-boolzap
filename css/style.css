@@ -11,6 +11,7 @@ body{
 	height: 100vh;
 	background: linear-gradient(to bottom, #009688 0% 15%, #D8DBD5 15% 100%);
     padding: 30px;
+    cursor: pointer;
 }
 
 /* CONTENITORE DI TUTTA APP */
@@ -38,6 +39,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-right: 1px solid lightgray;
 }
 
 .utente{
@@ -66,7 +68,6 @@ body{
     display: flex;
     justify-content: end;
     gap: 15px;
-    cursor: pointer;
 }
 
 /* NOTIFICHE */
@@ -114,7 +115,6 @@ body{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  cursor: pointer;
 }
 
 .dentro-input {
@@ -177,4 +177,77 @@ body{
     height: 100%;
     width: 70%;
     background-color: red;
+}
+
+/* MESSAGGI */
+
+.messaggio-container {
+	height: calc(100% - 130px);
+	background-image: url('../img/mine.jpg');
+	overflow-y: scroll;
+	padding: 50px;
+}
+.messaggio {
+	display: flex;
+}
+
+.messaggio.sent
+.messaggio-text{
+	background: #D5F9BA;
+	margin-left: auto;
+}
+
+.messaggio-text {
+	position: relative;
+	width: 40%;
+	padding: 1.25rem;
+	border-radius: 10px;
+	background: #fff;
+	margin-bottom: 10px;
+}
+
+.messaggio-date {
+	position: absolute;
+	font-size: 12px;
+	right: 5px;
+	bottom: 3px;
+	color: gray;
+} 
+
+.send-messaggio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #f3eeea;
+    }
+
+.send-messaggio i {
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-right: 15px;
+    color: #b1b1b1;
+}
+
+.input-send-messaggio {
+    padding: 0 15px;
+}
+
+.input-send-messaggio,
+.input-send-messaggio input {
+    height: 100%;
+    width: 100%;
+}
+
+.input-send-messaggio input {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.accesso p{
+    font-size: 12px;
+    margin-left: 15px;
 }
