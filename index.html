@@ -51,7 +51,7 @@
                         <i class="fas fa-search"></i>
                     </div>
                     <input class="cerca-chat" type="text" name="contact-name" value=""
-                        placeholder="Cerca o inizia una nuova chat">
+                        placeholder="Cerca o inizia una nuova chat" v-model="searchText" @keyup="filterContact()">
                 </div>
             </div>
             <!-- /BARRA CERCA -->
@@ -59,7 +59,8 @@
             <!-- /CONTATTI -->
             <ul class="contatti">
                 <li v-for="(contact, index) in contacts" :key="index"
-                    :class="index == indexCurrentContact ? 'active' : null" @click="indexCurrentContact = index">
+                    :class="index == indexCurrentContact ? 'active' : null" @click="indexCurrentContact = index"
+                    v-if="contact.visible">
                     <div class="contatti-avatar">
                         <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                     </div>

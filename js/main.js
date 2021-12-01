@@ -83,7 +83,9 @@ const app = new Vue({
             },
         ],
         indexCurrentContact: 0,
-        newMessage: ""
+        newMessage: "",
+        searchText: ""
+
     },
     methods: {
 
@@ -106,6 +108,15 @@ const app = new Vue({
                     status: 'received'
                 });
             }, 1000);
+        },
+        filterContact() {
+            this.contacts.forEach((element) => {
+                if (element.name.toLowerCase().includes(this.searchText.toLowerCase())) {
+                    element.visible = true;
+                } else {
+                    element.visible = false;
+                }
+            });
         }
     }
 });
