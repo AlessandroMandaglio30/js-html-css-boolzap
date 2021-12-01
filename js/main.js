@@ -89,7 +89,7 @@ const app = new Vue({
 
         // RICEVUTO
         sendMessage() {
-            this.contacts[this.indexCurrentContact].massages.push({
+            this.contacts[this.indexCurrentContact].messages.push({
                 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 message: this.newMessage,
                 status: 'sent'
