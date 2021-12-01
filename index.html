@@ -58,7 +58,8 @@
 
             <!-- /CONTATTI -->
             <ul class="contatti">
-                <li v-for="(contact,index) in contacts" :key="index" :class="index == 0 ? 'active' : null">
+                <li v-for="(contact, index) in contacts" :key="index"
+                    :class="index == indexCurrentContact ? 'active' : null" @click="indexCurrentContact = index">
                     <div class="contatti-avatar">
                         <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                     </div>
@@ -74,10 +75,12 @@
             <!-- PARTE DEL NOME DELLA CHAT -->
             <div class="header-utente">
                 <div class="utente">
-                    <img class="omini" src="./img/avatar_1.jpg" alt="user">
-                    <div class="accesso">
-                        <h3>Michele</h3>
-                        <p>Ultimo accesso oggi alle</p>
+                    <div class="contatti-avatar ">
+                        <img :src="`img/avatar${contacts[indexCurrentContact].avatar}.jpg`"
+                            :alt="contacts[indexCurrentContact].name.name">
+                    </div>
+                    <div class="contatti-name">
+                        {{contacts[indexCurrentContact].name}}
                     </div>
                 </div>
                 <div class="icone">
@@ -91,30 +94,17 @@
             <!-- CONTENTIORE DEI MESSAGGI -->
             <div class="messaggio-container">
 
-                <div class="messaggio">
+                <div class="messaggio" v-for="(message, index) in contacts[indexCurrentContact].messages"
+                    :class="message.status" :key="index">
                     <div class="messaggio-text">
-                        Hai portato a spasso il cane?
-                        <div class="messaggio-date">10/01/2021 16:15:22</div>
+                        {{message.message}}
+                        <div class="messaggio-date">{{message.date}}</div>
+
                     </div>
                 </div>
 
-                <div class="messaggio sent">
-                    <div class="messaggio-text">
-                        Hai portato a spasso il cane?
-                        <div class="messaggio-date">10/01/2021 16:15:22</div>
-                    </div>
-                </div>
-
-                <div class="messaggio">
-                    <div class="messaggio-text">
-                        Hai portato a spasso il cane?
-                        <div class="messaggio-date">10/01/2021 16:15:22</div>
-                    </div>
-                </div>
-
+                <!-- /CONTENTIORE DEI MESSAGGI -->
             </div>
-            <!-- /CONTENTIORE DEI MESSAGGI -->
-
             <!-- INPUT DI MESSAGGIO -->
             <div class="send-messaggio">
                 <div class="emoji">
@@ -128,8 +118,8 @@
                 </div>
             </div>
             <!-- /INPUT DI MESSAGGIO -->
+
         </div>
-    </div>
 
     </div>
     </div>

@@ -52,6 +52,7 @@ body{
     margin-left: 15px;
     margin-top: 5px;
     color: black;
+    font-size: 15px;
 }
 
 .omini{
@@ -158,6 +159,7 @@ body{
 	height: 50px;
 	border-radius: 50%;
 	overflow: hidden;
+    margin-left: 5px;
 }
 
 .contatti-avatar img {
