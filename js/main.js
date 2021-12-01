@@ -82,9 +82,30 @@ const app = new Vue({
                 ],
             },
         ],
-        indexCurrentContact: 0
+        indexCurrentContact: 0,
+        newMessage: ""
     },
     methods: {
 
+        // RICEVUTO
+        sendMessage() {
+            this.contacts[this.indexCurrentContact].massages.push({
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                message: this.newMessage,
+                status: 'sent'
+            });
+
+            // PULISCO L'INPUT
+            this.newMessage = "";
+
+            // RICEVUTO
+            setTimeout(() => {
+                this.contacts[this.indexCurrentContact].messages.push({
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    message: 'ok',
+                    status: 'received'
+                });
+            }, 1000);
+        }
     }
-})
+});

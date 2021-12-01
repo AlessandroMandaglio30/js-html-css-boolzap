@@ -172,6 +172,11 @@ body{
 	margin-left: 20px;
     font-weight: bold;
 }
+.contatti-nome p{
+    margin-top: 2px;
+    font-size: 12px;
+    font-weight: normal;
+}
 
 /* COLONNA DI DESTRA */
 
